@@ -1,0 +1,32 @@
+
+1. User Resgistration step.
+		Invoke http://localhost:8080/users/sign-up
+		inside body - select Raw and application/JSON and give body as
+
+		{
+			"username": "admin",
+			"password": "password"
+		}
+
+
+------------------------
+2.User.authentication process.
+		After Sign-up hit http://localhost:8080/login
+		inside body - select Raw and application/JSON and give body as
+
+		{
+			"username": "admin",
+			"password": "password"
+		}
+
+Here goto headers tab and see the response there, you will see something like below
+authorization →Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTU1ODM4Njg5NH0.RuE6FZi4dI1TTNjSmgJerrBLo98HHaiaVCBsgxVbJFg7fLgY9r1aumJAacHpjDeavWlREuqOy3Thq6Jih902EA
+
+
+----------------------------------------
+3.User Authorization Process.
+
+Use postman desktop version because chrome plugin version is deprecated they dont provision to keep "Bearer in authorization tab"
+
+Goto Authorization, take the token and select Bearer there and paste token in bearer section.
+try to hit URL http://localhost:8080/test/hello
